@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import Plus from "./assets/PlusIcon";
+import Github from "./assets/Github";
 import img from "./assets/autumn-goodman.jpg";
 import "./App.css";
 
 function Fab(props) {
   return (
-    <button className="btn btn--fab" onClick={props.onClick}>
+    <button 
+      className="btn btn--fab" 
+      onClick={props.onClick} 
+      aria-label={props.label}
+    >
       <Plus/>
     </button>
   );
@@ -40,8 +45,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="box">
-          <img src={img} alt="Photography by Autumn Goodman on Unsplash." title="Mother Nature: Summer - Autumn Goodman." />
-          <Fab onClick={this.handleShowSnack}/>
+          <img
+            src={img}
+            alt="Photography by Autumn Goodman on Unsplash."
+            title="Mother Nature: Summer - Autumn Goodman."
+          />
+          <Fab onClick={this.handleShowSnack} label="Mark as Favorite." />
         </div>
         <div className="box section">
           <h1 className="h1">
@@ -52,7 +61,25 @@ class App extends Component {
             Please click the fab button to display the snackbar. It will appear
             for 4 seconds and then disappear.
           </p>
-          <p>Photo by Autumn Goodman on Unsplash</p>
+          <p>
+            Photo by
+            <span>
+              &nbsp;
+              <a href="https://unsplash.com/@auttgood?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge">
+                Autumn Goodman
+              </a>
+              &nbsp;
+            </span>
+            on Unsplash
+          </p>
+          <p>
+            <a href="https://github.com/mikefreiman/react-snackbar">
+              <span>
+                <Github />
+              </span>
+              View code on Github.
+            </a>
+          </p>
         </div>
         <Snackbar snack={this.state.showSnack} message="Marked as favorite." />
       </div>

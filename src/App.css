@@ -107,3 +107,12 @@
   height: 22px;
   width: 22px;
 }
+
+.icon-github {
+  fill: #242526;
+  height: 22px;
+  width: 22px;
+  padding: 0px 2px;
+  margin: 0 2px 4px 0;
+  
+}
